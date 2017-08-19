@@ -1,0 +1,39 @@
+<view class="page_content" id="page_content">
+
+
+	<view class="newsflash_list" wx:for="{{list}}" wx:key wx:for-index="idxx">
+				<view class="newsflash_h2 newstime"><p>{{item.date}}</p></view>
+				
+					<view class="newsflash clearFix">
+						<view class="left">
+							<p>{{item.data.time}}</p>
+						</view>
+						<view class="right" bindtap="zksq" data-idxx="{{idxx}}">
+							<view class="newsflash_content">
+								<view class="title">{{item.data.title}}</view>
+								<text class="neirong" wx:if="{{item.data.show}}">{{item.data.neirong}}</text>
+							</view>
+							<view class="newsflash_function clearFix">
+								<view class="left updown" wx:if="{{!item.data.show}}"><span>展开 ˇ</span></view>
+								<view class="left updown" wx:else><span>收起 ˆ</span></view>
+							</view>
+						</view>
+					</view>
+				
+	</view>
+
+
+
+    	<view wx:if="{{page<pageCount}}" bindtap="getMoreKx" class="weui-loadmore weui-loadmore-line">
+            <span class="weui-loadmore-tips">加载更多</span>
+    </view>
+
+
+    <view wx:else class="weui-loadmore weui-loadmore-line">
+            <span class="weui-loadmore-tips">没有更多了</span>
+    </view>
+
+
+
+
+</view>

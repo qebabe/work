@@ -1,0 +1,45 @@
+{
+  "pages":[
+    
+    "pages/index/index",
+    "pages/kuaixun/kuaixun",
+    "pages/yuyin/yuyin",
+    "pages/shipin/shipin",
+    "pages/theme/theme",
+    "pages/detail/detail",
+    "pages/list/list"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#4253a3",
+    "navigationBarTitleText": "云酒头条",
+    "navigationBarTextStyle": "white"
+  },
+
+  "networkTimeout": {
+    "request": 120000,
+    "downloadFile": 120000
+  },
+    "tabBar": {
+    "color": "#353535",
+    "selectedColor": "#4253a3",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "images/home.png",
+      "selectedIconPath": "images/home_h.png",
+      "text": "首页"
+    }, {
+      "pagePath": "pages/yuyin/yuyin",
+      "iconPath": "images/yy.png",
+      "selectedIconPath": "images/yy_h.png",
+      "text": "语音"
+    },{
+      "pagePath": "pages/kuaixun/kuaixun",
+      "iconPath": "images/msg.png",
+      "selectedIconPath": "images/msg_h.png",
+      "text": "快报"
+    }]
+  }
+}

@@ -1,0 +1,67 @@
+<!--index.wxml-->
+<view class="container">
+  <swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" class="banners" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{banner}}">
+      <swiper-item class="banner" >
+          <image src="{{item.image}}"  data-id="{{item.id}}" bindtap="bindViewTap" class="banner-image" width="100%" height="100%"/>
+          <text class="banner-title">{{item.title}}</text>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="news-item-container">
+    <block wx:for="{{list}}" wx:for-index="id">
+      <text wx:if="{{item.header}}" class="sub-title">{{item.header}}</text>
+
+      <navigator wx:else url="../detail/detail?id={{item.id}}">
+      <view class="news-item-lg" wx:if="{{id==2}}">
+          <view class="news-item-top">
+            <image src="{{item.images[0]}}" class="news-image"/>
+          </view>
+          <view class="news-item-bottm">
+            <text class="news-item-title">{{item.title}}</text>
+            <view class="menu">
+              <view class="menu-time">{{item.time}}</view>
+              <view class="menu-save">{{item.cate_Name}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="news-item" wx:elif="{{(id-2)%6!=0}}">
+          <view class="news-item-left">
+            <text class="news-item-title">{{item.title}}</text>
+            <view class="menu">
+              <view class="menu-time">{{item.time}}</view>
+              <view class="menu-save">{{item.cate_Name}}</view>
+            </view>
+          </view>
+          <view class="news-item-right">
+            <image src="{{item.images[0]}}" class="news-image"/>
+          </view>
+        </view>
+         <view class="news-item-lg" wx:else>
+          <view class="news-item-top">
+            <image src="{{item.images[0]}}" class="news-image"/>
+          </view>
+          <view class="news-item-bottm">
+            <text class="news-item-title">{{item.title}}</text>
+            <view class="menu">
+              <view class="menu-time">{{item.time}}</view>
+              <view class="menu-save">{{item.cate_Name}}</view>
+            </view>
+          </view>
+        </view>
+
+      </navigator>
+    </block>
+  <view wx:if="{{page<pageCount}}" bindtap="loadMore" class="weui-loadmore weui-loadmore-line">
+            <span class="weui-loadmore-tips" style="background-color: #f2f2f2;">加载更多</span>
+    </view>
+
+
+    <view wx:else class="weui-loadmore weui-loadmore-line">
+            <span class="weui-loadmore-tips" style="background-color: #f2f2f2;">没有更多了</span>
+    </view>
+
+  </view>
+
+</view>
