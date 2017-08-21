@@ -1,0 +1,123 @@
+<!--pages/yanma_quan/yanma_quan/yanma_quan.wxml-->
+
+
+
+
+
+
+<view class="introBox">
+    <!--个人头像-->
+    <view class="imgShow">
+        <image wx:if="{{userInfo.userInfo.avatarUrl}}" class="imgBground" src="{{userInfo.userInfo.avatarUrl}}" alt="" style="height: 500rpx;"/>
+        <view wx:else class="banner-bg"></view>
+
+        <view class="details">
+            <view class="smalviewmg">
+                <image wx:if="{{userInfo.userInfo.avatarUrl}}" class="roundImg" src="{{userInfo.userInfo.avatarUrl}}" alt=""/>
+            </view>
+            <view><view class="uname">{{jrht}}</view></view>
+              <navigator url="../yanma_edit/yanma_edit" style="margin-top: 80rpx;">
+  <image src="../../images/fabu2.png" class="fabu" />
+</navigator>
+        </view>
+
+    </view>
+</view>
+
+
+
+
+
+<view class="weui_cells moments">
+        <!-- 普通的post -->
+        <view wx:for="{{quanData}}" wx:key class="weui_cell moments__post">
+          <view class="weui_cell_hd">
+            <image class="avatar fang" src="{{item.avatarUrl}}"/>
+          </view>
+          <view class="weui_cell_bd">
+            <!-- 人名链接 -->
+            <a class="title" href="javascript:;">
+              <span>{{item.nickname}}</span>
+              <span wx:if="{{ item.del }}" bindtap="del"  class="del" data-idx="{{index}}" data-id="{{item.id}}"  >删除</span>
+            </a>
+            <!-- post内容 -->
+            <p id="paragraph" class="paragraph">
+             {{item.body}}
+             </p>
+            <!-- 伸张链接 -->
+            <!--<a wx:if="{{item.body.length>=100}}" id="paragraphExtender" class="paragraphExtender">全文</a>-->
+            <!-- 相册 -->
+            <view class="thumbnails">
+
+            <block wx:for="{{item.imgPath}}" wx:key wx:for-item="itemm">
+              <view wx:if="{{itemm}}"  class="thumbnail">
+                <image bindtap="yulan" data-src="{{itemm}}"  src="{{itemm}}" data-urls="{{item.imgPath}}" ></image>
+              </view>
+              </block>
+            </view>
+            <!-- 资料条 -->
+            <view class="toolbar">
+              <p class="timestamp">{{item.time}}</p>
+              <!--<view>
+                <view id="actionMenu" class="actionMenu slideIn">
+                  <p class="actionBtn" id="btnLike"><image src="../../images/zan.png" class="zan" />赞</p>
+                   <p class="actionBtn" id="btnLike"><image src="../../images/zan.png" class="zan" />赞</p>
+                </view>
+              </view>-->
+              <span bindtap="listenerButton" data-ifzan="{{item.ifzan}}" data-pinglun=""  data-idx="{{index}}" data-id="{{item.id}}" data-nickname="{{item.nickname}}" id="actionToggle" class="actionToggle">..</span>
+            </view>
+            <!-- 赞／评论区 -->
+            <p class="liketext" wx:if="{{item.zan}}">
+              
+              <image  src="../../images/xin.png" class="zan" />
+              <block wx:for="{{item.zan}}" wx:key>
+              <span wx:if="{{index>0}}" class="nickname">,</span>
+              <span class="nickname">{{item}}</span>
+              </block>
+            </p>
+
+          <block  wx:for="{{item.pinglunList}}" wx:key wx:for-item="itemm" wx:for-index="idx">  
+            <p class="pinglun" >
+              <span class="nickname" style="margin-left: 15rpx;">{{itemm.nick}}：</span>
+              <span class="pinglun1">{{itemm.pinglun}}</span>
+              <span wx:if="{{ itemm.del }}" bindtap="delPinglun"  class="del" data-delno="{{itemm.no}}" data-idx="{{index}}" data-id="{{item.id}}"  >删除</span>
+            </p>
+            </block>
+          </view>
+          <!-- 结束 post -->
+        </view>
+        <view wx:if="{{pageCount == thisPage}}" class="weui-loadmore weui-loadmore_line">
+            <view class="weui-loadmore__tips">全部加载完了！</view>
+        </view>
+</view>
+
+
+<action-sheet hidden="{{actionSheetHidden}}" bindchange="listenerActionSheet" >
+
+    <block> 
+        <action-sheet-item bindtap="zan" >{{ ActionData.ifzan ? "取消赞":"赞"}}</action-sheet-item>
+        <action-sheet-item bindtap="pinglun" >评论</action-sheet-item>
+    </block>
+    <!--自动隐藏action-sheet-->
+    <action-sheet-cancel>取消</action-sheet-cancel>
+</action-sheet>
+
+<!--使用animation属性指定需要执行的动画-->  
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}"> 
+   
+<!--drawer content-->  
+  <view class="drawer_title">评论</view> 
+<form bindsubmit="bindFormSubmit" report-submit="true">
+  <view class="drawer_content"> 
+    <view class="top grid"> 
+      <!--<label class="title col-0">标题</label> -->
+      <!--<input class="input_base input_h30 col-1" name="rName" value=""></input> -->
+      <textarea name="pinglunData" class="input_base input_h30 col-1" placeholder="{{ '评论给：' + ActionData.nickname }}" auto-focus auto-height value="{{ ActionData.pinglun }}"/>
+      </view>
+      </view>
+  <view class="btns">
+    <button class="btn_ok" bindtap="cancel" >取消</button> 
+    <button class="btn_ok" form-type="submit" >发送</button>
+  </view>
+  </form>
+</view>

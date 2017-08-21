@@ -1,0 +1,18 @@
+<!--pages/yanma_video/yanma_video.wxml-->
+
+
+<view class="section">
+  <input   placeholder="" value="{{ name }}"/>
+</view>
+
+<view class="qrimg">
+<image src="{{ShareImg}}"></image>
+</view>
+
+
+
+<view class="section tc">
+  <view class="btn-area">
+    <button bindtap="uploadImg">选取图片</button>
+  </view>
+</view>

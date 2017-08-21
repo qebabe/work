@@ -1,0 +1,50 @@
+<view class="container">
+
+
+  <view class="weui-cells">
+    <view class="weui-cell">
+      <view class="weui-cell__hd center">
+        <text class="title">当前积分：</text>
+        <text class="point">{{ jifen.point }}</text>
+      </view>
+    </view>
+  </view>
+
+
+
+
+
+
+  <view class="weui-cells">
+
+
+    <view wx:for="{{ jifen.list }}" wx:key class="weui-cell">
+      <view class="weui-cell__hd">
+        <text class="point">+{{item.point}}</text>
+      </view>
+      <view class="weui-cell__bd">
+        <text class="text">{{ item.text }}</text>
+      </view>
+      <view class="weui-cell__bd">
+        <text class="allpoint">累积：{{ item.allpoint }}</text>
+      </view>
+      <view class="weui-cell__bd">
+        <text class="time">{{ item.time }}</text>
+      </view>
+    </view>
+
+    
+
+  </view>
+
+
+
+
+
+
+
+
+
+
+
+</view>

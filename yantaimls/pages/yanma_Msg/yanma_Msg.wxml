@@ -1,0 +1,47 @@
+<!--pages/yanma_yundong/yanma_yundong.wxml-->
+<view class="container">
+
+<view class="weui_panel">
+<view class="weui_panel_hd">未读消息</view>
+<view  wx:for="{{ Msg.wd }}" wx:key  class="weui_panel_bd">
+    <view class="weui_media_box weui_media_text">
+        <text class="weui_media_title">{{ item.name }}</text>
+        <p class="weui_media_desc">{{item.msg}}</p>
+        <ul class="weui_media_info">
+          <li class="weui_media_info_meta">{{item.time}}</li>
+          <li id="{{item.id}}" data-id="{{item.id}}" bindtap="yue" class="yue">阅</li>
+        </ul>
+    </view>
+
+
+
+</view>
+</view>
+
+
+
+<view class="weui_panel">
+<view class="weui_panel_hd">已读消息</view>
+<view wx:for="{{ Msg.yd }}" wx:key  class="weui_panel_bd">
+
+    <view class="weui_media_box weui_media_text">
+        <text class="weui_media_title">{{ item.name }}</text>
+        <p class="weui_media_desc">{{item.msg}}</p>
+        <ul class="weui_media_info">
+          <li class="weui_media_info_meta">{{item.time}}</li>
+        </ul>
+    </view>
+
+
+
+
+
+
+</view>
+</view>
+
+
+
+
+
+</view>

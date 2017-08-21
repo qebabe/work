@@ -1,0 +1,57 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.item-title {
+  font-size:18px;
+}
+.item-senddate {
+  font-size: 13px;
+  color: #aacf4d;
+}
+.item-description {
+  font-size: 13px;
+  color: #888888;
+}
+.slide-image{
+	width:100%;
+  height: 100%;
+}
+
+.weui-grid__icon image {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+.weui-loadmore__tips {
+  color:#CECECE;
+
+}
+#touxiang{
+ overflow:visible;
+}
+
+#touxiang view{
+ overflow:visible;
+}
+

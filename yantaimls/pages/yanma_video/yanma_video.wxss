@@ -1,0 +1,14 @@
+/* pages/yanma_video/yanma_video.wxss */
+
+
+.qrimg{
+  
+  text-align:center;
+}
+.qrimg image{
+
+  width:430rpx;
+  height:430rpx;
+
+
+}

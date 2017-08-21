@@ -1,0 +1,38 @@
+/* pages/wxpay/wxpay.wxss */
+/* pages/item/item.wxss */
+@import "/wxParse/wxParse.wxss";
+.page_hd {
+    padding: 40px;
+}
+.page__title {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 400;
+}
+.page__desc {
+    margin-top: 5px;
+    color: #888;
+    text-align: left;
+    font-size: 14px;
+}
+.weui-article {
+    padding: 20px 15px;
+    font-size: 15px;
+}
+.weui-weixin-tools {
+    overflow: hidden;
+    padding-top: 15px;
+    line-height: 32px;
+    font-size: 14px;
+}
+.weui-weixin-read {
+    vertical-align: 0;
+    position: relative;
+    margin: 0 10px;
+    display: inline-block;
+    color: #8c8c8c;
+}
+.weui-form-preview__hd .weui-form-preview__value {
+    font-style: normal;
+    font-size: 1.6em;
+}

@@ -1,0 +1,113 @@
+<!--pages/yanma_cjcx/yanma_cjcx.wxml-->
+<view class="page">
+ <view class="page_hd">
+        <view class="page__title">{{title}}</view>
+        <view class="page__desc"></view>
+  </view>
+
+
+<view class="weui-cells weui-cells_form">
+    <view class="weui-cell">
+        <view class="weui-cell__hd">
+            <view class="weui-label">身份证号：</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input bindinput="idnumberInput" class="weui-input" placeholder="请输入身份证号查询" auto-focus/>
+        </view>
+    </view>
+</view>
+<view class="weui-btn-area">
+    <button bindtap="chaxun" class="weui-btn weui-btn_primary" id="showTooltips">查询</button>
+</view>
+
+
+<view wx:if="{{istrue}}" class="weui-cells">
+    <view class="weui-cell">
+       <view class="weui-cell__bd">
+             <view>身份证号：</view>
+        </view>
+        <view class="weui-cell__ft">{{idnumber}}</view>
+    </view>
+    <view class="weui-cell">
+       <view class="weui-cell__bd">
+             <view>姓名：</view>
+        </view>
+        <view class="weui-cell__ft">{{userData.name}}</view>
+    </view>
+        <view class="weui-cell">
+       <view class="weui-cell__bd">
+             <view>参赛号码：</view>
+        </view>
+        <view class="weui-cell__ft">{{userData.cshm}}</view>
+    </view>
+
+
+    <view class="weui-cell">
+       <view class="weui-cell__bd">
+             <view>性别：</view>
+        </view>
+        <view class="weui-cell__ft">{{userData.xb}}</view>
+    </view>
+    <view class="weui-cell">
+       <view class="weui-cell__bd">
+             <view>电话：</view>
+        </view>
+        <view class="weui-cell__ft">{{userData.tel}}</view>
+    </view>
+
+    <view class="weui-cell">
+       <view class="weui-cell__bd">
+             <view>参赛项目：</view>
+        </view>
+        <view class="weui-cell__ft">{{userData.xm}}</view>
+    </view>
+    <view class="weui-cell">
+       <view class="weui-cell__bd">
+             <view>枪声成绩：</view>
+        </view>
+        <view class="weui-cell__ft">{{userData.KMQ}}</view>
+    </view>
+
+    <view class="weui-cell">
+       <view class="weui-cell__bd">
+             <view>净成绩：</view>
+        </view>
+        <view class="weui-cell__ft">{{userData.KMJ}}</view>
+    </view>
+    <view class="weui-cell">
+       <view class="weui-cell__bd">
+             <view>枪声名次：</view>
+        </view>
+        <view class="weui-cell__ft">{{userData.qmc}}</view>
+    </view>
+    <view class="weui-cell">
+       <view class="weui-cell__bd">
+             <view>净名次：</view>
+        </view>
+        <view class="weui-cell__ft">{{userData.jmc}}</view>
+    </view>
+
+</view>
+<view wx:else class="zhanwei" style="margin: 280rpx;"></view>
+
+
+
+<view class="side-bar">
+  <contact-button 
+  type="default-dark" 
+  size="25"
+  session-from="weapp"
+>
+<view class="kefu">客服</view>
+</contact-button>
+  
+</view>
+<view class="weui-footer">
+  <view class="weui-footer__links">
+                <view class="weui-footer__link">华夏厚方</view>
+                <view class="weui-footer__link">烟台国际马拉松</view>
+  </view>
+  <view class="weui-footer__text">Copyright © 2008-2016 mhuaxia.com</view>
+</view>
+
+</view>

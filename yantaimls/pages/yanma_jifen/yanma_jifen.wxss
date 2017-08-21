@@ -1,0 +1,148 @@
+/* pages/yanma_ucenter/yanma_ucenter.wxss */
+.w3l_main_grid {
+    width: 100%;
+}
+.w3l_main_grid1 {
+    background: #ab1719;
+    padding: 2em;
+}
+.w3l_main_grid1_left {
+    float: left;
+}
+.w3l_main_grid1_right {
+    float: right;
+}
+.menu {
+    display: inline-block;
+    position: relative;
+}
+span.menu-icon {
+    display: block;
+    cursor: pointer;
+    margin: 0 0 0.5em 0;
+    position: relative;
+}
+.w3l_main_grid1_right i {
+    width: 5px;
+    height: 5px;
+    border-radius: 10px;
+    background: #fff;
+    display: block;
+    margin-bottom: 2px;
+    font-style: normal;
+}
+ul.nav1 {
+    display: none;
+}
+
+
+ul.nav1 {
+    z-index: 999;
+    width: 102px;
+    background-color: #FFF;
+    padding: 0.5em 1em;
+    position: absolute;
+    right: 0;
+}
+
+ul, label {
+    margin: 0;
+    padding: 0;
+}
+
+ol, ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+ul.nav1 li {
+    display: block;
+    margin: 0 0 1em;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+ul.nav1 li a {
+    font-size: 14px;
+    color: #212121;
+    text-align: center;
+}
+
+
+.menu a {
+    display: block;
+}
+.clear {
+    clear: both;
+}
+.w3l_main_grid1_sub {
+    text-align: center;
+}
+.w3l_main_grid1_sub text {
+    font-size: 1.2em;
+    color: #fff;
+    margin: .5em 0 0;
+    text-transform: uppercase;
+    display:block;
+}
+.avatarr{
+  width:80px;
+  height:80px;
+  margin-right:5px;
+  border-radius:50%;
+}
+.star{
+  width:20px;
+  height:20px;
+
+}
+.icon{
+  width:20px;
+  height:20px;
+  margin-right:5px;
+  margin-top:5px;
+
+}
+.arrowright{
+    width:20px;
+    height:20px;
+    margin-right:5px;
+
+}
+.weui-cell {
+padding:5px 15px;
+}
+.point{
+  color:red;
+  padding-right:45rpx;
+  font-size:60rpx;
+}
+.text{
+  font-size:30rpx;
+  color:gray;
+}
+.time{
+  font-size:32rpx;
+  float:right;
+  color:#00BFFF;
+}
+.center{
+  text-align: center;
+}
+.allpoint{
+  color:rgb(72,194,61);
+  font-size:25rpx;
+
+}

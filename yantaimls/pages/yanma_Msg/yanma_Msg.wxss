@@ -1,0 +1,10 @@
+/* pages/yanma_Msg/yanma_Msg.wxss */
+
+.yue{
+  float:right;
+  color:red;
+  font-size:50rpx;
+  padding-right:1em;
+  padding-left:1em;
+  border-left:1px solid #cecece;
+}

@@ -1,0 +1,63 @@
+{
+  "pages":[
+    "pages/yanma/yanma",
+    "pages/wxpay/wxpay",
+    "pages/yanma_ucenter/yanma_userdata/yanma_userdata",
+
+
+    "pages/yanma_quan/yanma_quan/yanma_quan",
+
+    "pages/yanma_quan/yanma_edit/yanma_edit",
+
+
+
+    "pages/yanma_video/yanma_video",
+
+    "pages/yanma_ucenter/yanma_ucenter",
+    "pages/yanma_jifen/yanma_jifen",
+    "pages/yanma_Msg/yanma_Msg",
+
+    "pages/yanma_liuyanban/yanma_liuyanban",
+    "pages/yanma_yundong/yanma_yundong",
+    "pages/yanma_item/yanma_item",
+    "pages/yanma_bm/yanma_bm",
+    "pages/yanma_search/yanma_search",
+
+    "pages/yanma_cjcx/yanma_cjcx"
+
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#ab1719",
+    "navigationBarTitleText": "烟台的马拉松",
+    "navigationBarTextStyle":"white"
+
+  },
+  "tabBar": {
+    "selectedColor": "#000000",
+    "borderStyle": "lightgray",
+    "list": [
+      {
+        "pagePath": "pages/yanma/yanma",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-actived.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/yanma_yundong/yanma_yundong",
+        "iconPath": "images/board.png",
+        "selectedIconPath": "images/board-actived.png",
+        "text": "运动排行"
+      },
+      {
+        "pagePath": "pages/yanma_quan/yanma_quan/yanma_quan",
+        "iconPath": "images/note.png",
+        "selectedIconPath": "images/note-actived.png",
+        "text": "马圈"
+      }
+
+    ]
+  }
+}
+
+

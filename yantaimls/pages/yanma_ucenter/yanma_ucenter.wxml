@@ -1,0 +1,101 @@
+<!--pages/yanma_yundong/yanma_yundong.wxml-->
+<view class="container">
+
+
+
+
+
+
+<view class="introBox">
+    <!--个人头像-->
+    <view class="imgShow">
+        <image class="imgBground" src="{{userInfo.userInfo.avatarUrl}}" alt="" />
+        <view class="details">
+            <view class="smalviewmg">
+                <image class="roundImg" src="{{userInfo.userInfo.avatarUrl}}" alt=""/>
+            </view>
+            <view><view class="uname">{{userInfo.userInfo.nickName}}</view></view>
+        </view>
+    </view>
+</view>
+
+<!--<view class="weui-cells">
+  <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <image src="../images/gerenziviewao.png" class="icon" /> 
+        </view>
+         <view class="weui-cell__bd">
+          <text>个人资料</text>
+         </view>
+        <image src="../images/arrowright.png" class="arrowright" /> 
+  </view>
+</view>-->
+
+
+<view class="weui-cells">
+    <navigator url="yanma_userdata/yanma_userdata"   class="weui-cell">
+        <view class="weui-cell__hd">
+          <image src="../images/xiaoxi.png" class="icon" /> 
+        </view>
+         <view class="weui-cell__bd">
+          <text>个人信息</text>
+         </view>
+        <image src="../images/arrowright.png" class="arrowright" /> 
+  </navigator>
+
+
+
+
+  <navigator url="../yanma_Msg/yanma_Msg"   class="weui-cell">
+        <view class="weui-cell__hd">
+          <image src="../images/xiaoxi.png" class="icon" /> 
+        </view>
+         <view class="weui-cell__bd">
+          <text>消息通知</text>
+         </view>
+        <image src="../images/arrowright.png" class="arrowright" /> 
+  </navigator>
+    <navigator url="../yanma_jifen/yanma_jifen"  class="weui-cell">
+        <view class="weui-cell__hd">
+          <image src="../images/jifen.png" class="icon" /> 
+        </view>
+         <view class="weui-cell__bd">
+          <text>我的积分</text>
+         </view>
+        <image src="../images/arrowright.png" class="arrowright" /> 
+  </navigator>
+</view>
+
+
+
+
+
+
+
+<!--<view class="weui-cells">
+  <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <image src="../images/chengji.png" class="icon" /> 
+        </view>
+         <view class="weui-cell__bd">
+          <text>比赛成绩</text>
+         </view>
+        <image src="../images/arrowright.png" class="arrowright" /> 
+  </view>
+    <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <image src="../images/zhengshu.png" class="icon" /> 
+        </view>
+         <view class="weui-cell__bd">
+          <text>比赛证书</text>
+         </view>
+        <image src="../images/arrowright.png" class="arrowright" /> 
+  </view>
+</view>-->
+
+
+
+
+
+
+</view>

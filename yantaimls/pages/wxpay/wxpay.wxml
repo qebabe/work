@@ -1,0 +1,58 @@
+<!--pages/wxpay/wxpay.wxml-->
+
+<!--<import src="../../wxParse/wxParse.wxml"/>-->
+<view class="page">
+
+
+  <view class="page_bd">
+
+
+  </view>
+
+<view class="page__bd">
+   <view wx:if="{{ !pay }}" class="weui-form-preview">
+
+     <view class="page_hd">
+        <view class="page__title">订单预览</view>
+        <!--<view class="page__desc">{{senddate}}</view>-->
+      </view>
+      <view class="weui-form-preview__hd">
+        <view class="weui-form-preview__item">
+          <label class="weui-form-preview__label">付款金额</label>
+          <em class="weui-form-preview__value">¥{{payData.total_fee}}</em>
+        </view>
+      </view>
+      <view class="weui-form-preview__bd">
+        <view class="weui-form-preview__item">
+           <label class="weui-form-preview__label">商品</label>
+           <span class="weui-form-preview__value">{{ payData.title }}</span>
+        </view>
+       <view class="weui-form-preview__item">
+            <label class="weui-form-preview__label">证件号码</label>
+            <span class="weui-form-preview__value">{{ payData.idnumber }}</span>
+        </view>
+        <view class="weui-form-preview__item">
+            <label class="weui-form-preview__label">订单号</label>
+            <span class="weui-form-preview__value">{{ payData.trade_no }}</span>
+        </view>
+      </view>
+      <view class="weui-form-preview__ft">
+        <view wx:if="{{ready}}" bindtap="gopay"  class="weui-form-preview__btn weui-form-preview__btn_primary" >支  付</view>
+      </view>
+    </view>
+
+
+<view wx:if="{{pay}}" class="weui-msg">
+        <view class="weui-msg__icon-area">
+            <icon type="success" size="90"/>
+        </view>
+        <view class="weui-msg__text-area">
+            <view class="weui-msg__title">支付成功</view>
+            <view class="weui-msg__desc">内容详情，可根据实际需要安排，如果换行则不超过规定长度，居中展现</view>
+        </view>
+</view>
+
+
+
+
+</view></view>

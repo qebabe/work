@@ -1,0 +1,44 @@
+<view class="page">
+
+
+
+
+<view class="page-bd-15">
+
+<view class="weui_cells weui_cells_form" >
+<form bindsubmit="bindFormSubmit" report-submit="true">
+    <view class="weui_cell">
+          <view class="weui_cell_bd weui_cell_primary">
+                <textarea name="textarea" class="weui_textarea" placeholder="想对跑友说什么..." />
+          </view>
+    </view>
+    <view class="weui_cell">
+                <view class="weui_cell_bd weui_cell_primary">
+                    <view class="weui_uploader">
+                        <view class="weui_uploader_bd">
+                            <ul class="weui_uploader_files">
+                                <li wx:for="{{imgs}}"  wx:key  class="weui_uploader_file">
+                                  <image  class="weui_uploader_file" src="{{item}}" ></image>
+                                  <view bindtap="delimg" data-index="{{index}}" class="weui-badge" style="position: absolute;: 1px;margin-top: -5px;margin-left: -25px;">X</view>
+                                </li>
+                            </ul>
+                               <view wx:if="{{ imgs.length<9 }}" bindtap="uploadImg" class="weui_uploader_input_wrp">
+                            </view>
+                        </view>
+                    </view>
+                </view>
+    </view>
+
+
+
+
+
+    <view class="weui_btn_area">
+            <button form-type="submit" type="primary">发布</button>
+    </view>
+</form>
+</view>
+
+</view>
+
+</view>

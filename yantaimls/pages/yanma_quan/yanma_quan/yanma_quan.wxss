@@ -1,0 +1,447 @@
+/*朋友圈*/
+/* 
+  基本样式设置 
+  Basic Setup
+  引用WeUI,FontAwesome
+*/
+page{
+  font: "microsoft yahei"; 
+}
+body {
+  background-color: #eee;
+}
+.iphone-container {
+  width: 250px;
+  margin: 0 auto;
+  margin-top: 4%;
+}
+.iphone {
+  position: absolute;
+}
+.screen {
+  position: relative;
+  height: 530px;
+  width: 324px;
+  margin: 0 auto;
+  top: 78px;
+  left: 13px;
+}
+.moments__post {
+  display: block;
+  border-bottom:1rpx solid #f3f3f5;
+
+}
+.moments__post .weui_cell_hd {
+  display: table-cell;
+  vertical-align: top;
+  min-width: 45px;
+}
+.moments__post .weui_cell_hd image {
+  width: 45px !important;
+}
+.moments__post .weui_cell_bd {
+  font-size: 15px;
+  display: table-cell;
+  padding-left: 10px;
+}
+.moments__post .weui_cell_bd a,
+.moments__post .weui_cell_bd .title,
+.moments__post .weui_cell_bd .paragraphExtender,
+.moments__post .weui_cell_bd .fa,
+.moments__post .weui_cell_bd .nickname {
+  color: #5d6b85;
+}
+.moments__post .weui_cell_bd .title,
+.moments__post .weui_cell_bd .paragraph,
+.moments__post .weui_cell_bd .thumbnails {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  margin-bottom: 5px;
+}
+.moments__post .weui_cell_bd .paragraphExtender {
+  margin: 5px auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.moments__post .weui_cell_bd .thumbnails {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+.moments__post .weui_cell_bd .thumbnails .thumbnail {
+  width: 80px;
+  height: 80px;
+  margin: 1px;
+  background: #757575;
+  overflow: hidden;
+}
+.moments__post .weui_cell_bd .thumbnails .thumbnail image {
+  width: 100%;
+  height: 100%;
+}
+.moments__post .weui_cell_bd .toolbar {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  width:570rpx;
+
+}
+.moments__post .weui_cell_bd .toolbar .timestamp,
+.moments__post .weui_cell_bd .toolbar .timestamp .fa {
+  color: #757575;
+  font-size: 13px;
+}
+.moments__post .weui_cell_bd .liketext {
+  margin-top: 10px;
+  width: 100%;
+  background-color: #f3f3f5;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  border-bottom:1rpx solid rgba(136, 136, 136, 0.2);
+}
+
+.moments__post .weui_cell_bd .pinglun {
+    margin-top:-15px;
+    width:100%;
+    background-color:#f3f3f5;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:flex;
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+    align-items:center;
+    -webkit-flex-wrap:wrap;
+    flex-wrap:wrap;
+    padding-top:5rpx;
+
+
+}
+.del{
+  font-size:23rpx;
+margin-left:30rpx;
+color:#5d6b85;
+
+}
+
+
+
+.moments__post .weui_cell_bd .liketext .fa {
+  font-size: 10px;
+  font-weight: bold;
+  margin-right: 5px;
+  margin-left: 10px;
+}
+.moments__post .weui_cell_bd .liketext:before {
+  bottom: 100%;
+  left: 10px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-bottom-color: #f3f3f5;
+  border-width: 5px;
+}
+.moments__post .weui_cell_bd .actionMenu {
+  position: absolute;
+  height: 29px;
+  background-color: #4e5156;
+  border-radius: 5px;
+  z-index: 5;
+  top: 7px;
+  right: 20px;
+  display: flex;
+  -webkit-justify-content: space-around;
+   
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     
+          align-items: center;
+}
+.moments__post .weui_cell_bd .actionMenu .actionBtn {
+  color: #fff;
+  padding: 0 20px;
+}
+.moments__post .weui_cell_bd .actionMenu .actionBtn .fa {
+  color: #fff;
+  margin-right: 5px;
+}
+.moments__post .weui_cell_bd .actionMenu .actionBtn:not(:first-child) {
+  border-left: 1px solid #3f4346;
+}
+.moments__post .weui_cell_bd .actionMenu.active {
+  display: -webkit-box;
+  display: -webkit-flex;
+  
+  display: flex;
+}
+.moments__post .weui_cell_bd .actionToggle {
+  width: 25px;
+  height: 18px;
+  background: #92abd4;
+  margin-left: auto;
+  border-radius: 1px;
+  position: absolute;
+  right: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  color:#ffffff;
+
+}
+.moments__post .weui_cell_bd .actionToggle p {
+  width: 3px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 3px;
+  margin: auto 2px;
+}
+.moments__post .weui_cell_bd .actionToggle:before {
+  right: 100%;
+  top: 4px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-right-color: #92abd4;
+  border-width: 3px;
+}
+
+.zan {
+  width:20px;
+  height:20px;
+  display:block;
+}
+p{
+  display:flex;
+  -webkit-margin-before:1em;
+  -webkit-margin-after:1em;
+  -webkit-margin-start:0px;
+  -webkit-margin-end:0px;
+}
+.fang{
+border-radius:8%;
+}
+.xin{
+  margin-right:11rpx;
+  font-size:30rpx;
+  margin-left:14rpx;
+  color:#5d6b85;
+}
+/*/////////////////////*/
+.btn { 
+  width: 80%;  
+  padding: 20rpx 0;  
+  border-radius: 10rpx;  
+  text-align: center;  
+  margin: 40rpx 10%;  
+  background: #000;  
+  color: #fff;  
+} 
+   
+/*mask*/ 
+.drawer_screen { 
+  width: 100%;  
+  height: 100%;  
+  position: fixed;  
+  top: 0;  
+  left: 0;  
+  z-index: 1000;  
+  background: #000;  
+  opacity: 0.5;  
+  overflow: hidden;  
+} 
+   
+/*content*/ 
+.drawer_box { 
+  width: 650rpx;  
+  overflow: hidden;  
+  position: fixed;  
+  top: 50%;  
+  left: 0;  
+  z-index: 1001;  
+  background: #FAFAFA;  
+  margin: -150px 50rpx 0 50rpx;  
+  border-radius: 3px; 
+  border:2rpx solid #ccc; 
+} 
+   
+.drawer_title{ 
+  padding:15px;  
+  font: 15px "microsoft yahei";  
+  text-align: center;  
+} 
+.drawer_content { 
+  /*height: 210px;  */
+  overflow-y: scroll; /*超出父盒子高度可滚动*/ 
+} 
+.btns {
+  display:flex;
+  margin-top:30rpx;
+
+}
+.btn_ok{ 
+  padding: 10px;  
+  font: 17px "microsoft yahei";  
+  text-align: center;  
+  border-top: 1px solid #E8E8EA;  
+  color: #3CC51F;
+  width:50%;
+} 
+   
+.top{ 
+    padding-top:8px;  
+} 
+.bottom { 
+    padding-bottom:8px;  
+} 
+.title { 
+    height: 30px;  
+    line-height: 30px;  
+    /*width: 160rpx;  */
+    text-align: center;  
+    display: inline-block;  
+    font: 300 28rpx/30px "microsoft yahei";  
+} 
+   
+.input_base { 
+    border: 2rpx solid #ccc;  
+    padding-left: 10rpx;  
+    /*margin-right: 50rpx;  */
+} 
+.input_h30{ 
+    height: 30px;  
+    line-height: 30px;  
+    margin-left:20rpx;
+
+} 
+.input_h60{ 
+    height: 60px;  
+} 
+.input_view{ 
+    font: 12px "microsoft yahei";  
+    background: #fff;  
+    color:#000;  
+    line-height: 30px;  
+} 
+   
+input { 
+    font: 12px "microsoft yahei";  
+    background: #fff;  
+    color:#000 ;  
+} 
+radio{ 
+    margin-right: 20px;  
+} 
+.grid { display: -webkit-box; display: box; } 
+.col-0 {-webkit-box-flex:0;box-flex:0;} 
+.col-1 {-webkit-box-flex:1;box-flex:1;} 
+.fl { float: left;} 
+.fr { float: right;}
+
+
+.w3l_main_grid {
+    width: 100%;
+    background:#ab1719;
+
+}
+.w3l_main_grid1 {
+    background: #ab1719;
+    padding: 2em;
+}
+.w3l_main_grid1_left {
+    float: left;
+}
+.w3l_main_grid1_right {
+    float: right;
+}
+.menu {
+    display: inline-block;
+    position: relative;
+}
+span.menu-icon {
+    display: block;
+    cursor: pointer;
+    margin: 0 0 0.5em 0;
+    position: relative;
+}
+.w3l_main_grid1_right i {
+    width: 5px;
+    height: 5px;
+    border-radius: 10px;
+    background: #fff;
+    display: block;
+    margin-bottom: 2px;
+    font-style: normal;
+}
+.avatarr{
+  width:80px;
+  height:80px;
+  margin-right:5px;
+  border-radius:50%;
+}
+.clear {
+    clear: both;
+}
+.w3l_main_grid1_sub {
+    text-align: center;
+}
+.w3l_main_grid1_sub text {
+    font-size: 1.2em;
+    color: #fff;
+    margin: .5em 0 0;
+    text-transform: uppercase;
+    display:block;
+}
+.zan{
+  width:15px;
+  height:15px;
+  display:block;
+  margin-left:12rpx;
+  margin-right:9rpx;
+
+}
+.fabu{
+width:100rpx;
+height:130rpx;
+display:inline-block;
+overflow:hidden;
+margin-left:592rpx;
+margin-top:-60rpx;
+
+
+}
+.uname{
+  font-size:39rpx;
+}
+
+.banner-bg{
+  height:500rpx;
+  background-color:#ab1719;
+}

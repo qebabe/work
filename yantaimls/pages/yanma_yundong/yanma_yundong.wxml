@@ -1,0 +1,58 @@
+<!--pages/yanma_yundong/yanma_yundong.wxml-->
+
+
+
+<view class="container">
+
+
+<view class="weui-cells">
+
+
+<view class="weui-cells__title">我今天的步数</view>
+  <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <image src="{{userInfo.userInfo.avatarUrl}}" class="avatar" /> 
+        </view>
+         <view class="weui-cell__bd">
+                    <text>{{userInfo.userInfo.nickName}}</text>
+                </view>
+                <view wx:if="{{myStep >= 10000}}" class="weui-cell__ft_step1">{{myStep}}步</view>
+                <view wx:elif="{{myStep > 0}}" class="weui-cell__ft_step">{{myStep}}步</view>
+                <view wx:else class="weui-cell__ft_step2">{{myStep}}步</view>
+  </view>
+  </view>
+
+<view class="weui-cells weui-cells_form">
+           <view class="weui-cell weui-cell_switch">
+                <view class="weui-cell__bd">是否将今天成绩显示在排行榜</view>
+                <view class="weui-cell__ft">
+                        <switch bindchange="shiFouXianShiCJ" checked="{{ sfxs }}"/>
+                </view>
+            </view>
+</view>
+
+
+  <view class="weui-cells">
+  <view class="weui-cells__title">今日排行榜</view>
+            <view class="weui-cell" wx:for="{{stepInfoList}}" wx:for-index="idx" wx:key>
+               <view class="weui-cell__bdd">
+                    <text>{{idx+1}}</text>
+                </view>
+                <view class="weui-cell__hd">
+                    <image src="{{item.avataurl}}" class="avatar" /> 
+                </view>
+                <view class="weui-cell__bd">
+                    <text>{{item.nickname}}</text>
+                </view>
+                <view wx:if="{{item.step >= 10000}}" class="weui-cell__ft_step1">{{item.step}}步</view>
+                <view wx:elif="{{item.step > 0}}" class="weui-cell__ft_step">{{item.step}}步</view>
+                <view wx:else class="weui-cell__ft_step2">{{item.step}}步</view>
+            <view bindtap="zan" data-idx="{{idx}}" data-id="{{item.id}}" class="weui-cell__hd">
+                    <image wx:if="{{item.ifzan}}"  src="../images/zand.png" class="zan" />
+                    <image wx:else  src="../images/zan.png" class="zan" />
+                    <text animation="{{animation}}" class="zan-text">{{ item.zan }}</text> 
+            </view>
+            </view>
+</view>
+
+</view>

@@ -1,0 +1,161 @@
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+	<view>
+		<image src="{{pageData.banner}}" style="width: 100%;height: 250rpx;"></image>
+    <view class="page__bd">
+    	<form bindsubmit="formBindsubmit" report-submit="true">
+	    	<view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{tips}}</view>
+	    	<view class="weui-cells__title">{{pageData.title}}</view>
+
+	        <view class="weui-cells weui-cells_after-title">
+	            <view class="weui-cell weui-cell_select">
+	                <view class="weui-cell__hd" style="width: 105px">
+	                    <picker bindchange="bindZjlxChange" name="zjlx" value="{{zjlx[zjlxIndex]}}" range="{{zjlx}}">
+	                        <view class="weui-select">{{zjlx[zjlxIndex]}}</view>
+	                    </picker>
+	                </view>
+	                <view class="weui-cell__bd weui-cell__bd_in-select-before">
+	                    <input class="weui-input" name="idnumber" type="{{idnumberType[zjlxIndex]}}" bindblur="testIdnumber" confirm-type="next" value="{{userdata.idnumber}}" placeholder="请输入{{zjlx[zjlxIndex]}}号码" />
+	                </view>
+	            </view>
+
+
+	            <view class="weui-cell weui-cell_input">
+	                <view class="weui-cell__hd">
+	                    <view class="weui-label">姓名：</view>
+	                </view>
+	                <view class="weui-cell__bd">
+	                    <input class="weui-input" name="name" type="text" confirm-type="next" placeholder="请输入姓名"/>
+	                </view>
+	            </view>
+
+	            <view class="weui-cell weui-cell_select">
+	                <view class="weui-cell__hd weui-cell__hd_in-select-after">
+	                    <view class="weui-label">性别：</view>
+	                </view>
+	                <view class="weui-cell__bd">
+	                    <picker bindchange="bindXbChange" name="xb" value="{{xb[xbIndex]}}" range="{{xb}}">
+	                        <view class="weui-select weui-select_in-select-after">{{xb[xbIndex]}}</view>
+	                    </picker>
+	                </view>
+	            </view>
+
+	            <view class="weui-cell weui-cell_input">
+	                <view class="weui-cell__hd">
+	                    <view class="weui-label">国籍：</view>
+	                </view>
+	                <view class="weui-cell__bd">
+	                    <input class="weui-input" name="gj" type="text" confirm-type="next" placeholder="请输入姓名" value="中国"/>
+	                </view>
+	            </view>
+
+	            <view class="weui-cell weui-cell_input">
+	                <view class="weui-cell__hd">
+	                    <view class="weui-label">手机号码：</view>
+	                </view>
+	                <view class="weui-cell__bd">
+	                    <input class="weui-input" name="tel" type="number" confirm-type="next" placeholder="请输入手机号码"/>
+	                </view>
+	            </view>
+	            <view class="weui-cell weui-cell_input weui-cell_vcode">
+	                <view class="weui-cell__hd">
+	                    <view class="weui-label">地址：</view>
+	                </view>
+	                <view class="weui-cell__bd">
+	                    <input class="weui-input" name="dz" disabled="true" placeholder="点击获取地址" value="{{dz}}" />
+	                </view>
+	                <view class="weui-cell__ft">
+	                    <view class="weui-vcode-btn" bindtap="getAddr">获取地址</view>
+	                </view>
+	            </view>
+	            <view class="weui-cell weui-cell_input">
+	                <view class="weui-cell__hd">
+	                    <view class="weui-label">紧急电话：</view>
+	                </view>
+	                <view class="weui-cell__bd">
+	                    <input class="weui-input" name="jjtel" type="number" confirm-type="next" placeholder="请输入紧急联系人手机号码"/>
+	                </view>
+	            </view>
+	            <view class="weui-cell weui-cell_input">
+	                <view class="weui-cell__hd">
+	                    <view class="weui-label">紧急姓名：</view>
+	                </view>
+	                <view class="weui-cell__bd">
+	                    <input class="weui-input" name="jjname" type="text" confirm-type="next" placeholder="请输入紧急联系人姓名"/>
+	                </view>
+	            </view>
+	            <view class="weui-cell weui-cell_input">
+	                <view class="weui-cell__hd">
+	                    <view class="weui-label">电子邮箱：</view>
+	                </view>
+	                <view class="weui-cell__bd">
+	                    <input class="weui-input" name="email" type="text" confirm-type="next" placeholder="请输入紧急联系人姓名"/>
+	                </view>
+	            </view>
+	            <view class="weui-cell weui-cell_select">
+	                <view class="weui-cell__hd weui-cell__hd_in-select-after">
+	                    <view class="weui-label">参加项目：</view>
+	                </view>
+	                <view class="weui-cell__bd">
+	                    <picker bindchange="bindXmChange" name="xm" value="{{xmValue[xbIndex]}}" range="{{xm}}">
+	                        <view class="weui-select weui-select_in-select-after">{{xm[xmIndex]}}</view>
+	                    </picker>
+	                </view>
+	            </view>
+	            <view class="weui-cell weui-cell_select">
+	                <view class="weui-cell__hd weui-cell__hd_in-select-after">
+	                    <view class="weui-label">参加次数：</view>
+	                </view>
+	                <view class="weui-cell__bd">
+	                    <picker bindchange="bindCjcsChange" name="cjcs" value="{{cjcsIndex}}" range="{{cjcs}}">
+	                        <view class="weui-select weui-select_in-select-after">{{cjcs[cjcsIndex]}}</view>
+	                    </picker>
+	                </view>
+	            </view>
+	            <view class="weui-cell weui-cell_select">
+	                <view class="weui-cell__hd weui-cell__hd_in-select-after">
+	                    <view class="weui-label">衣服型号：</view>
+	                </view>
+	                <view class="weui-cell__bd">
+	                    <picker bindchange="bindYfxhChange" name="yfxh" value="{{yfxhValue[yfxhIndex]}}" range="{{yfxh}}">
+	                        <view class="weui-select weui-select_in-select-after">{{yfxh[yfxhIndex]}}</view>
+	                    </picker>
+	                </view>
+	            </view>
+<!-- 	            <view class="weui-cell weui-cell_input">
+	                <view class="weui-cell__hd">
+	                    <view class="weui-label">团队名称：</view>
+	                </view>
+	                <view class="weui-cell__bd">
+	                    <input class="weui-input" name="team" type="text"  placeholder="没有可不填"/>
+	                </view>
+	            </view> -->
+
+
+
+
+
+
+
+	        </view>
+	        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" formType="submit">保存</button>
+        </view>
+
+	        </form>
+
+
+<!--         <checkbox-group bindchange="bindAgreeChange">
+            <label class="weui-agree" for="weuiAgree">
+                <view class="weui-agree__text">
+                    <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+                    <view class="weui-agree__checkbox-icon">
+                        <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+                    </view>
+                    阅读并同意<navigator url="" class="weui-agree__link">《相关条款》</navigator>
+                </view>
+            </label>
+        </checkbox-group> -->
+
+    </view>
+    </view>
+ </view>
