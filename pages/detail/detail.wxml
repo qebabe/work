@@ -1,0 +1,102 @@
+<!--detail.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="container">
+    <view class="art-header">
+        <image src="{{art.image}}" class="art-img"/>
+        <view class="art-source">{{art.image_source}}</view>
+    </view>
+    <view class="art-content">
+        <view class="art-title">{{art.title}}</view>
+        <view class="art-m">
+            <view class="art-m-tx">
+                <image src="../../images/logo.jpg" class="art-m-tx"/>
+                <view wx:if="{{art.zuozhe!=''}}" class="art-m-zz">{{art.zuozhe}}</view>
+                <view wx:else class="art-m-zz">云酒团队</view>
+            </view>
+            
+
+            <view class="art-m-time">{{art.time}}</view>
+        </view>
+
+       <!--  <image src="../../images/top.gif" class="top-img"/> -->
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+<!--水平滚动-->
+<!--     <view wx:if="{{cataList!=''}}" style="width: 750rpx;background-color:#fff;margin-bottom:200rpx">
+        <view style="margin: 15px 0 10px 15px;wxcs_style_margin: 10rpx 0 0 30rpx;text-align: center;">相关阅读 ▼</view>
+        <scroll-view scroll-x="true" style=" white-space: nowrap; " >
+        <!--  display: inline-block-->
+<!--           <view wx:for="{{cataList}}" style=" width: 80%; height: auto; display: inline-block" >
+            <navigator url="detail?id={{item.id}}">
+              <view class="news-item-lg" >
+                  <view class="news-item-top">
+                    <image src="{{item.image}}" class="news-image"/>
+                  </view>
+                  <view class="news-item-bottm">
+                    <text class="news-item-title">{{item.title}}</text>
+                  </view>
+                </view>
+            </navigator>
+          </view>
+        </scroll-view>
+    </view>
+ -->
+ <view wx:if="{{cataList!=''}}" style="width: 750rpx;background-color:#fff;margin-bottom:200rpx">
+
+
+       <!--  <view style="margin: 15px 0 10px 15px;wxcs_style_margin: 10rpx 0 0 30rpx;text-align: center;">相关阅读 ▼</view>
+ -->
+     <view  class="weui-loadmore weui-loadmore-line" style="overflow: visible;margin-bottom:-10rpx;">
+            <span class="weui-loadmore-tips" style="font-size: 32rpx;">推荐阅读</span>
+    </view>
+         <block wx:for="{{cataList}}" wx:for-index="id">
+
+        <navigator  url="../detail/detail?id={{item.id}}">
+        <view class="news-item">
+          <view class="news-item-left">
+            <text class="news-item-title">{{item.title}}</text>
+            <view class="menu">
+              <view class="menu-time">{{item.time}}</view>
+              <!-- <view class="menu-save">{{item.cate_Name}}</view> -->
+            </view>
+          </view>
+          <view class="news-item-right">
+            <image src="{{item.image}}" class="news-image"/>
+          </view>
+        </view>
+    </navigator>
+    </block>
+
+    </view>
+
+
+
+
+
+<view class="nav foot">
+            <ul>
+                <li>
+                    <navigator  open-type="navigateBack" url="../index/index" hover-class="navigator-hover" style="font-size: 18px;color: #fff;" >
+                        <button  style="line-height: 1;background-color: #ffffff;color: #fff; display:inline;position:static;">
+                        <image src="../../images/back.png" class="zan" />
+                        </button>
+                    </navigator>
+                </li>
+                <li>
+                    <navigator style="font-size: 18px;color: #fff;">
+                        <button open-type="share" style="line-height: 1;background-color: #ffffff;color: #fff; display:inline;position:static;">
+                            <image src="../../images/share.png" class="zan" />
+                        </button>
+                    </navigator>
+                </li>
+                <li>
+                    <navigator  style="font-size: 18px;color: #fff;">
+                        <button bindtap="goTop"  style="line-height: 1;background-color: #ffffff;color: #fff; display:inline;position:static;">
+                            <image src="../../images/to-top.png" class="zan" />
+                        </button>
+                    </navigator>
+                </li>
+            </ul>
+        </view>
+</view>
+

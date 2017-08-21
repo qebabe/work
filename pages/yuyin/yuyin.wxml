@@ -1,0 +1,94 @@
+<view class="weui-panel__hd" bindtap="donghua">云酒语音</view>
+<!-- <view animation="{{animationData}}" style="background:red;height:100rpx;width:100rpx"></view> -->
+<view class="weui-panel__bd" style="margin-bottom: 10px;">
+
+<block wx:for="{{list}}" wx:key wx:for-index="idx">
+  <view class="weui-media-box weui-media-box_appmsg" style="padding: 0px;" hover-class="weui-cell_active" bindtap="djPlay" data-item="{{item}}" data-idx="{{idx}}">
+    <view class="weui-cell" style="padding: 4px 15px;">
+      <view class="weui-cell__hd" style="position: relative;margin-right: 25px;">
+
+        <image wx:if="{{play && playYuYInId===item.yuyin_id}}" animation="{{animationData}}" src="{{item.cover_url}}" style="width: 70px;height: 70px;display: block;border-radius: 50%;overflow: hidden;"/>
+		<image wx:else src="{{item.cover_url}}" style="width: 70px;height: 70px;display: block;border-radius: 50%;overflow: hidden;"/>
+
+        <view style="position: absolute;width: 200rpx;height: 200rpx;z-indent: 2;left: 40rpx;top: 40rpx;">
+        	<image wx:if="{{play && playYuYInId===item.yuyin_id}}" src="../../images/pause.png" style="width: 60rpx;height: 60rpx;"></image>
+        	<image wx:else src="../../images/play.png" style="width: 60rpx;height: 60rpx;"></image>
+    	</view>
+      </view>
+      <view class="weui-cell__bd">
+        <view class="weui-media-box__title yuyin_title" >{{ item.title }}</view>
+        <view class="weui-media-box__desc">{{ item.album_title }}</view>
+        <view class="weui-media-box__info" style="margin-top: 4px;" wx:if="{{play && playYuYInId===item.yuyin_id}}" >{{item.time}}    <text style="color: #4253a3;">播放中...</text></view>
+        <view class="weui-media-box__info" style="margin-top: 4px;" wx:else >{{item.time}}</view>
+      </view>
+    </view>
+  </view>
+</block>
+
+
+	<view wx:if="{{page<pageCount}}" bindtap="loadMore" class="weui-loadmore weui-loadmore-line">
+            <span class="weui-loadmore-tips">加载更多</span>
+    </view>
+
+
+    <view wx:else class="weui-loadmore weui-loadmore-line">
+            <span class="weui-loadmore-tips">没有更多了</span>
+    </view>
+
+
+
+
+
+
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<view style="height:200rpx"></view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<view wx:if="{{playIndex!=-1}}" class="menu">
+	
+	<view class="jdt">
+		<view class="miaoshu">{{currentPosition}}</view>
+		<slider bindchange="tuodong" left-icon="cancel"  value="{{wz}}" right-icon="success_no_circle" style="width: 55%;"/>
+		<view class="miaoshu">{{duration1}}</view>
+	</view>
+	
+	<view bindtap="prevOne" >
+		<image src="../../images/prev.png" style="width: 80rpx;height: 80rpx;"></image>
+	</view>
+	<view wx:if="{{play}}" bindtap="audioPause">
+		<image src="../../images/pause.png" style="width: 80rpx;height: 80rpx;"></image>
+	</view>
+	<view wx:if="{{!play}}" bindtap="audioPlay">
+		<image src="../../images/play.png" style="width: 80rpx;height: 80rpx;"></image>
+	</view>
+	<view bindtap="nextOne">
+		<image src="../../images/next.png" style="width: 80rpx;height: 80rpx;"></image>
+	</view>
+</view>

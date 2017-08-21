@@ -1,0 +1,257 @@
+@import "../../wxParse/wxParse.wxss";
+.art-header{
+    position: relative;
+    width: 100%;
+    height: 500rpx;
+    color: #FFF;
+}
+
+.art-img{
+    width: 100%;
+    height: 100%;
+}
+.top-img{
+    width: 100%;
+    height: 30px;
+    margin-bottom:30rpx;
+
+}
+
+.art-title{
+    /*position: absolute;*/
+    bottom: 36px;
+    left: 8px;
+    font-size: 20px;
+    color:#000000;
+    margin-bottom:10rpx;
+    font-weight:bold;
+}
+
+.art-source {
+    position: absolute;
+    bottom: 8px;
+    font-size: 14px;
+    right: 8px;   
+}
+
+.art-content{
+    font-size: 14px;
+    color: #616466;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 10px;
+    background-color: #FFF;
+    line-height: 1.5;
+    width: 90%;
+    margin-bottom:10rpx;
+    padding-bottom:30rpx;
+
+}
+.meta {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 16px;
+    color: #b8b8b8;
+}
+.meta .author {
+    color: #444;
+}
+
+.meta .bio {
+    color: #999;
+}
+.meta span {
+    vertical-align: middle;
+}
+
+.nav {
+background:#ffffff;
+padding:10px 0 6px 0;
+width:100%;
+position:fixed;
+left:-2px;
+bottom:0;
+height:65rpx;
+color:#ffffff;
+
+}
+.nav ul {
+    height: 0px;
+}
+.nav ul li {
+    float: left;
+    width: 250rpx;
+    text-align: center;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+.nav ul li button::after{
+    width: 0px;
+
+
+}
+.nav ul li span {
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    line-height: 22px;
+}
+.scroll-view-item{
+    height: 200rpx;
+}
+.scroll-view-item_H{
+    width: 100%;
+    height: 300rpx;
+}
+.bc_green{
+    background-color: green;
+}
+.bc_red{
+    background-color: red;
+}
+.bc_yellow{
+    background-color: yellow;
+}
+.bc_blue{
+    background-color: blue;
+}
+.news-item-container {
+  background-color: #f2f2f2;
+  width: 100%;
+}
+.news-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 8px;
+  padding-top: 8px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+  /*margin-left: 8px;
+  margin-right: 8px;*/
+  margin-top: 2px;
+  background-color: #fff;
+  /*border: 1px solid #eaeaea;
+  border-bottom: 1px solid #d0d0d0;
+  border-radius: 5px;*/
+}
+.news-item-lg {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 8px;
+  padding-top: 8px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+  /*margin-left: 8px;
+  margin-right: 8px;*/
+  margin-top: 5px;
+  background-color: #fff;
+  /*border: 1px solid #eaeaea;
+  border-bottom: 1px solid #d0d0d0;
+  border-radius: 5px;*/
+}
+.news-item-lg .news-item-top .news-image{
+  width: 100%;
+  height: 397rpx;
+}
+
+.news-item-left{
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  align-content:space-between;
+  width: 450rpx;
+
+
+}
+.menu{
+  font-size:23rpx;
+  color:gray;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack:justify;
+    -webkit-justify-content:space-between;
+    -ms-flex-pack:justify;
+    justify-content:space-between;
+    margin-top:27rpx;
+    width:90%;
+    margin:10px 10px 5px 10px;
+
+
+}
+
+.menu-time{
+  display:inline;
+  float: left;
+}
+.menu-save{
+  display:inline;
+  float: right;
+}
+.news-item-right{
+  /*width: 80px;*/
+  height: 200rpx;
+  width:300rpx;
+
+}
+.news-item-top{
+  margin:1px 1px 8px 1px;
+
+}
+
+.news-image{
+  width: 100%;
+  height: 200rpx;
+}
+
+.news-item-title{
+  font-size: 16px;
+  width:90%;
+  margin:8px 10px 0 5px;
+    display: -webkit-box; 
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical; 
+  overflow: hidden;
+
+
+}
+.new-item-bottm{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.zan {
+  width:60rpx;
+  height:60rpx;
+}
+.art-m{
+  display: flex;
+  align-items:center;
+  margin:30rpx 0 30rpx 0;
+  justify-content:space-between;
+
+
+}
+.art-m-tx{
+ /* width: 12%*/
+ display:flex;
+ align-items:center;
+
+}
+.art-m-zz{
+ /* width: 40%*/
+}
+.art-m-tx image{
+  border-radius:50%;
+  overflow:hidden;
+  width:60rpx;
+  height:60rpx;
+  margin-right:25rpx;
+
+}
